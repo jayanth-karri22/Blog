@@ -1,0 +1,30 @@
+# What's new compared to JS?
+
+Doesn't support ad hoc polymorphism yet; Use different operators for different operand types
+
+```reasonml
+2.0 +. 1.0;
+
+2 + 1;
+
+"abc" ++ "def";
+```  
+
+`<`, `>` are polymorphic, but doesn't work when both the operands are of not same type.
+
+<br/>
+
+ReasonML strings are encoded as UTF-8 and not compatible with JS UTF-16 strings. Use BuckleScript JS strings instead
+
+```reasonml
+JS.log("äöü")
+```
+
+<br/>
+
+Unit type - `()`; used for functions with side effects that don't return anything
+
+```reasonml
+# print string
+: - string => unit => <fun>
+```
